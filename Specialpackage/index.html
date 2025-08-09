@@ -1,349 +1,514 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Furniture Collection</title>
- <link rel="stylesheet" href="/style.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Place in the <head> section -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Special Packages</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0;
-      padding: 0;
       font-family: 'Poppins', sans-serif;
-        padding-top: 70px; /* adjust based on your header height */
        background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
-    }
-
-       .product-box {
-      max-width: 1100px;
-      margin: 0rem auto;
-      background-color: var(--light);
-      padding: 3.5rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 10px 25px var(--shadow);
-      position: relative;
-    }
-
-
-/* General scroll animation class */
-.scroll-animate {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.7s ease-out;
-}
-
-/* When element is in view */
-.scroll-animate.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-
-   
-    .product-box h2 {
-      font-size: 2.5rem;
-      color: var(--accent);
-      margin-bottom: 0.8rem;
-      position: relative;
-    }
-
-    .product-box h2::after {
-      content: '';
-      width: 60px;
-      height: 4px;
-      background-color: var(--accent);
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-    }
-
-    .product-box p {
-      font-size: 1.2rem;
       color: #333;
-      margin-bottom: 2rem;
+      
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .product-grid img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      transform: scale(1);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .product-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-    }
-
-
-    .image-wrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 ratio = 9 / 16 = 0.5625 */
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.image-wrapper img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* crop & fill without distortion */
-}
-
-
-    .product-details {
-      padding-top: 1rem;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-      margin-bottom: 1.5rem;
-       margin-top: 1.5rem;
-    }
-
-    ul li {
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
-      position: relative;
-      padding-left: 1rem;
-    }
-
-   
-
-    .info-box {
-      background: #fff3f0;
-      padding: 1rem 1.5rem;
-      border-left: 4px solid var(--accent);
-      border-radius: 10px;
-      font-size: 1.05rem;
-    }
-
-    
-    .simple-footer {
-      background: #1b1b1b;
-      color: #ccc;
+    header {
+      background: linear-gradient(to right, #848285, #2575fc);
+      color: white;
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.75rem;
-      margin-top: 4rem;
+      padding: 60px 15px 40px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
-   
-     @media (max-width: 480px) {
-  .product-box {
-    padding : 0rem;
-    margin: 0.5rem;
-      margin-bottom: 4rem;
-    border-radius: 1rem;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    header h1 {
+      font-size: 1.9rem;
+      margin-top: 40px;
+      letter-spacing: 1px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .services-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    @media(min-width: 600px) {
+      .services-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .service-card h2 {
+      font-size: 1.05rem;
+      margin: 20px 0;
+      color: #000;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 12px 22px;
+      background-color: #2575fc;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      transition: background 0.3s ease, padding-right 0.3s ease;
+    }
+
+    .btn::after {
+      content: '→';
+      position: absolute;
+      opacity: 0;
+      right: 20px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #1a5fd5;
+      padding-right: 35px;
+    }
+
+    .btn:hover::after {
+      opacity: 1;
+      right: 15px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.itinerary-section {
+  display: none;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease-in-out;
+}
+
+.itinerary-section.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.itinerary-section h3 {
+  font-size: 1.3rem;
+  color: #1e1e1e;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 25px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #ccc;
+}
+
+
+.itinerary-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  margin-bottom: 20px; /* Added gap below */
+}
+
+
+
+
+
+
+
+
+
+.itinerary-day {
+  background-color: #fdfdfd;
+  border-left: 4px solid #007BFF;
+  border-radius: 10px;
+  padding: 15px 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.025);
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.7;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.whatsapp-contact {
+ 
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.whatsapp-box {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.whatsapp-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.whatsapp-box p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+  color: #555;
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+.whatsapp-button img {
+  width: 20px;
+  height: 20px;
+}
 
 
-      .product-box h2 {
-        font-size: 2rem;
-      }
 
-      .product-box p,
-      ul li,
-      .info-box {
-        font-size: 1rem;
-      }
-    }
+
+
+
   </style>
 </head>
 <body>
 
- <header class="navbar">
-   <div class="logo">
-  <h1>Elegant Spaces</h1>
-</div>
+ <header class="topbar">
+  <div class="logo">
+    <img src="/logo.png" alt="Logo" />
+  </div>
 
-    <nav class="nav-links">
-            <a href="/">Home</a>
-<a href="/#products">Products</a>       <!-- scroll to section in homepage -->
-<a href="/projects/">Projects</a>       <!-- goes to /projects/index.html -->
+  <ul class="desktop-nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#aboutus">About Us</a></li>
+    <li><a href="/#packages">Packages</a></li>
+    <li><a href="#">Contact</a></li>
+    <li class="social-icons">
+  <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
 
-<a href="/#blog">Blog</a>               <!-- scroll to blog section in homepage -->
-<a href="/#contactuss">Contact</a>        <!-- scroll to contact section in homepage -->
+
+    </li>
+  </ul>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<nav class="sidemenu" id="sidemenu">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/#aboutus">About Us</a></li>
+    <li><a href="/#packages">Packages</a></li>
+    <li><a href="#">Contact</a></li>
+    <li class="social-icons">
+       <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </li>
+  </ul>
+</nav>
+
+<div class="overlay" id="overlay"></div>
 
 
-    </nav>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+
+
+
+  <!-- Topbar is already in style.css -->
+  <header>
+    <h1>Special Packages</h1>
   </header>
 
-  <!-- Sofa Section -->
-  <div class="product-box">
-    <h2>Sofa</h2>
-    <p>Explore our range of modern, space-saving sofas perfect for any living area.</p>
-   <div class="image-wrapper">
-  <img src="/sofa10.jpg" alt="Sofa">
+  <main class="services-container">
+    <div class="service-card">
+      <img src="/s1.jpg" alt="3 Star Deluxe">
+      <h2>3 Star Deluxe + Asia Cup Cricket – 5 Day & 4 Night</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary1">Discover More</a>
+    </div>
+
+    <div class="service-card">
+      <img src="/h2.jpg" alt="3 Star Deluxe Abu Dhabi">
+      <h2>3 Star Deluxe + Asia Cup Cricket – 3 Day & 2 Night</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary2">Discover More</a>
+    </div>
+
+    <div class="service-card">
+      <img src="/s2.jpg" alt="4 Star Premium">
+      <h2>4 Star Luxury + Asia Cup Cricket – 5 Day & 4 Night</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary3">Discover More</a>
+    </div>
+
+    <div class="service-card">
+      <img src="/h4.jpg" alt="4 Star Premium Abu Dhabi">
+      <h2>4 Star Luxury + Asia Cup Cricket – 3 Day & 2 Night</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary4">Discover More</a>
+    </div>
+
+    <div class="service-card">
+      <img src="/s3.jpg" alt="4 Star Luxury">
+      <h2>5 Star Luxury + Asia Cup Cricket – 5 Day & 4 Night</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary5">Discover More</a>
+    </div>
+
+    <div class="service-card">
+      <img src="/s4.jpg" alt="4 Star Luxury Abu Dhabi">
+      <h2>5 Star Luxury + Asia Cup Cricket – 3 Day & 2 Night</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary6">Discover More</a>
+    </div>
+
+
+  </main>
+
+  <!-- Itineraries -->
+  <div id="itineraries">
+    <div id="itinerary1" class="itinerary-section">
+      <h3>3 Star Deluxe + Asia Cup Cricket – 5 Day & 4 Night</h3>
+      <span class="itinerary-label">Itinerary:</span>
+        <div class="itinerary-day">Day 1: Arrival Transfer from Dubai Airport + Check In to Dubai Hotel + Evening Dhow Cruise (Creek) with Dinner.</div>
+  <div class="itinerary-day">Day 2: Morning visit to Museum of the Future (Entry Ticket & Transfers) + Dubai cricket stadium .</div>
+  <div class="itinerary-day">Day 3: Half Day Dubai City Tour + Afternoon visit to Burj Khalifa (At the Top – Normal Hours) & Dubai Mall Aquarium and underwater zoo (Tickets & Transfers Included).</div>
+  <div class="itinerary-day">Day 4: Dubai Frame Ticket with Transfers + Free time for leisure/shopping or optional activities like view at the palm (General admission ) ticket with transfers /  Dolphin and seal show ticket with transfers.</div>
+  <div class="itinerary-day">Day 5: Check Out + Departure Transfer from Hotel to Dubai Airport.</div>
+    </div>
+
+    <div id="itinerary2" class="itinerary-section">
+      <h3>3 Star Deluxe + Asia Cup Cricket – 3 Day & 2 Night</h3>
+       <span class="itinerary-label">Itinerary:</span>
+       <div class="itinerary-day">Day 1: Arrival Transfer from Dubai Airport + Check In to Dubai Hotel + Evening Dhow Cruise (Creek) with Dinner.</div>
+  <div class="itinerary-day">Day 2: Half Day Dubai City Tour + Dubai cricket stadium.</div>
+  <div class="itinerary-day">Day 3: Check Out + Departure Transfer from Hotel to Dubai Airport.</div>
 </div>
 
-    <div class="product-details">
-      <ul>
-        <li>L-Type Sofa – Perfect for corners and small spaces</li>
-        <li>C-Type Sofa – Balanced for larger seating needs</li>
-        <li>Modern – Crafted for comfort, styled for today</li>
-        <li>All Model</li>
+    <div id="itinerary3" class="itinerary-section">
+      <h3>4 Star Luxury + Asia Cup Cricket – 5 Day & 4 Night</h3>
+       <span class="itinerary-label">Itinerary:</span>
+         <div class="itinerary-day">Day 1: : Arrival Transfer + Check In at 4-Star Hotel (Dubai) + Evening Dhow Cruise – Marina with Dinner.</div>
+  <div class="itinerary-day">Day 2: Morning visit to Museum of the Future (Entry Ticket & Transfers) + Dubai cricket stadium.</div>
+  <div class="itinerary-day">Day 3: Dubai Frame + Afternoon visit to Burj Khalifa (At The Top – Normal /Prime Hours) & Dubai Mall Aquarium and underwater zoo (Tickets & Transfers Included). + Evening Luxury Dinner at Burj Khalifa Roof top dinner.</div>
+  <div class="itinerary-day">Day 4: Morning Helicopter Experience -Iconic Tour - 12 Minutes (Sharing Flight) with transfers + Afternoon Deluxe/Premium Desert Safari with BBQ Dinner (Dune Bashing, Camel Ride, Belly Dance).</div>
+  <div class="itinerary-day">Day 5: Check Out + Departure Transfer from Hotel to Dubai Airport.</div>
+    </div>
+
+    <div id="itinerary4" class="itinerary-section">
+      <h3>4 Star Luxury + Asia Cup Cricket – 3 Day & 2 Night</h3>
+       <span class="itinerary-label">Itinerary:</span>
+        <div class="itinerary-day">Day 1: Arrival Transfer from Dubai Airport + Check In to Hotel + Evening Private Yacht Ride (3 hours from Dubai Marina with dinner).</div>
+  <div class="itinerary-day">Day 2: Half Day Dubai City Tour + Dubai cricket stadium.</div>
+  <div class="itinerary-day">Day 3: Check Out + Departure Transfer from Hotel to Dubai Airport.</div>
+</div>
+
+    <div id="itinerary5" class="itinerary-section">
+      <h3>5 Star Luxury + Asia Cup Cricket – 5 Day & 4 Night</h3>
+       <span class="itinerary-label">Itinerary:</span>
+        <div class="itinerary-day">Day 1: Arrival Transfer from Dubai Airport + Check In at 5-Star Hotel + Evening Private Yacht Ride (3 hours from Dubai Marina with dinner).</div>
+  <div class="itinerary-day">Day 2: Morning visit to Museum of the Future (Entry Ticket & Transfers) + Dubai cricket stadium.</div>
+  <div class="itinerary-day">Day 3: Dubai Frame + Afternoon visit to Burj Khalifa (At The Top – Normal /Prime Hours) & Dubai Mall Aquarium and underwater zoo (Tickets & Transfers Included). + Evening Luxury Dinner at Burj Khalifa Roof top dinner.</div>
+  <div class="itinerary-day">Day 4:  Morning Helicopter Experience -Iconic Tour - 12 Minutes (Sharing Flight) with transfers + Afternoon Private Deluxe /Premium Desert Safari with BBQ Dinner (Dune Bashing, Camel Ride, Belly Dance).</div>
+  <div class="itinerary-day">Day 5: Check Out + Departure Transfer from Hotel to Dubai Airport.</div>
+    </div>
+
+    <div id="itinerary6" class="itinerary-section">
+      <h3>5 Star Luxury + Asia Cup Cricket – 3 Day & 2 Night</h3>
+       <span class="itinerary-label">Itinerary:</span>
+        <div class="itinerary-day">Day 1: Arrival Transfer from Dubai Airport + Check In at 5-Star Hotel + Evening Private Yacht Ride (3 hours from Dubai Marina with dinner).</div>
+  <div class="itinerary-day">Day 2: Half Day Dubai City Tour private + Dubai cricket stadium.</div>
+  <div class="itinerary-day">Day 3: Check Out + Departure Transfer from Hotel to Dubai Airport.</div>
+</div>
+
+    
+  
+
+
+<section class="whatsapp-contact" id="whatsapp">
+  <div class="whatsapp-box">
+    <h2>Get in Touch</h2>
+    <p>Have questions or need assistance? Chat with us on WhatsApp.</p>
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-button">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png" alt="WhatsApp Icon" />
+      Chat on WhatsApp
+    </a>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Logo & About -->
+    <div class="footer-section">
+      <img src="/logo.png" alt="Logo" class="footer-logo">
+      <p>Your Gateway to Unforgottable UAE Experience</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+         <li><a href="/#aboutus">About Us</a></li>
+        <li><a href="/#packages">Packages</a></li>
+        <li><a href="#whatsapp">Contact</a></li>
       </ul>
-      <div class="info-box">
-        <strong>Materials:</strong> Hardwood, Fabric, Leather <br>
-        <strong>Colors:</strong> Fully customizable
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>📍 Dubai, UAE</p>
+      <p>📞 +971 123 456 789</p>
+      <p>📧 info@yourdomain.com</p>
+      <div class="social-icons">
+        <a href="#"><img src="/Facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="/Instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="/whatsapp.svg" alt="WhatsApp"></a>
       </div>
     </div>
   </div>
-
-  <!-- Chair Section -->
-  <div class="product-box">
-    <h2>Chairs</h2>
-    <p>Elegant and ergonomic chairs suited for dining, work, and relaxation.</p>
-    <div class="image-wrapper">
-  <img src="/chairs1.jpg" alt="Sofa">
-</div>
-
-    <div class="product-details">
-      <ul>
-        <li>Designer Chair – Make a bold statement with every seat</li>
-        <li>Dining Chair – Comfort that stays through every course</li>
-        <li>Kitchen Chair – Style that fits your cooking space</li>
-        <li>Bar Chair – Perfect perch for your high conversations </li>
-      </ul>
-      <div class="info-box">
-        <strong>Finishes:</strong> Matte, Glossy, Woodgrain <br>
-        <strong>Materials:</strong> Teak, Metal, Upholstery
-      </div>
-    </div>
+  <div class="footer-bottom">
+    &copy; 2025 IMDGlobal. All rights reserved.
   </div>
-
-  <!-- Table Section -->
-  <div class="product-box">
-    <h2>Tables</h2>
-    <p>Functional and fashionable tables for dining, study, or décor.</p>
-    <div class="image-wrapper">
-  <img src="/tables.jpg" alt="Sofa">
-</div>
-
-    <div class="product-details">
-      <ul>
-        <li>Table – Crafted to complete your perfect space</li>
-        <li>Dining Table – Dine in style, every day</li>
-        <li>T Table – Compact. Functional. Beautifully crafted</li>
-        <li>Corner Table – Style your corners smartly</li>
-      </ul>
-      <div class="info-box">
-        <strong>Materials:</strong> Hardwood, Glass, Engineered Wood<br>
-        <strong>Finish Options:</strong> Polish, Laminate, Veneer
-      </div>
-    </div>
-  </div>
-
-  <!-- Curtain Section -->
-  <div class="product-box">
-    <h2>Curtains</h2>
-    <p>Custom-made curtains that complement your room and provide light control.</p>
-    <div class="image-wrapper">
-  <img src="/curtains.jpg" alt="Sofa">
-</div>
-
-    <div class="product-details">
-      <ul>
-        <li>Decor Curtains – Transform your space with designer drapes</li>
-        <li>Lite Curtains – Privacy with a gentle touch of daylight</li>
-        <li>Plain Curtains – Simple. Sophisticated. Always in style</li>
-      </ul>
-      <div class="info-box">
-        <strong>Fabric Options:</strong> Linen, Velvet, Cotton, Silk<br>
-        <strong>Colors:</strong> Custom matching for interiors
-      </div>
-    </div>
-  </div>
-
-  <!-- Blinds Section -->
-  <div class="product-box">
-    <h2>Blinds</h2>
-    <p>Elegant blinds designed for light control, minimalism, and modern homes.</p>
-    <div class="image-wrapper">
-  <img src="/blinds.jpg" alt="Sofa">
-</div>
-
-    <div class="product-details">
-      <ul>
-        <li>Venetian Blinds – Sleek style in every slat</li>
-        <li>Vertical – Perfect for large windows and sliding doors</li>
-        <li>Zebra Blinds – Dual layer control</li>
-        <li>Roman Blinds – Soft folds, refined finish</li>
-             <li>Bamboo Blinds – Natural style with eco-friendly charm</li>
-      </ul>
-      <div class="info-box">
-        <strong>Mechanism:</strong> Manual or Motorized<br>
-        <strong>Finishes:</strong> Blackout, Light Filter, Textured
-      </div>
-    </div>
-     </div>
-
-  <footer class="simple-footer">
-    <p>&copy; 2025 Elegant Spaces. All rights reserved.</p>
-  </footer>
+</footer>
 
 
-  <!-- JavaScript -->
- <script>
-  function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('show');
-  }
 
-  // Close menu when clicking outside
-  document.addEventListener('click', function(event) {
-    const navLinks = document.querySelector('.nav-links');
-    const hamburger = document.querySelector('.hamburger');
 
-    const clickedInsideMenu = navLinks.contains(event.target);
-    const clickedHamburger = hamburger.contains(event.target);
 
-    // If not clicked on menu or hamburger, close the menu
-    if (!clickedInsideMenu && !clickedHamburger) {
-      navLinks.classList.remove('show');
-    }
-  });
-</script>
+
+
+  <script>
+    const buttons = document.querySelectorAll('.btn');
+    const itineraries = document.querySelectorAll('.itinerary-section');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+
+        // Hide all itineraries
+        itineraries.forEach(item => item.classList.remove('active'));
+
+        // Show the selected one
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.2 });
+  const hamburger = document.getElementById("hamburger");
+  const sidemenu = document.getElementById("sidemenu");
+  const overlay = document.getElementById("overlay");
+  const menuLinks = sidemenu.querySelectorAll("a"); // Get all links inside sidemenu
 
-    // Automatically target children inside product-box
-    document.querySelectorAll('.product-box *').forEach(el => {
-      el.classList.add('scroll-animate');
-      observer.observe(el);
+  hamburger.addEventListener("click", () => {
+    sidemenu.classList.toggle("active");
+    overlay.classList.toggle("active");
+    hamburger.classList.toggle("open");
+  });
+
+  overlay.addEventListener("click", () => {
+    sidemenu.classList.remove("active");
+    overlay.classList.remove("active");
+    hamburger.classList.remove("open");
+  });
+
+  // ✅ Close sidemenu when any link is clicked
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      sidemenu.classList.remove("active");
+      overlay.classList.remove("active");
+      hamburger.classList.remove("open");
     });
   });
 </script>
+
+
 
 
 </body>
