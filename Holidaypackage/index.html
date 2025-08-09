@@ -1,188 +1,239 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interior Design Ideas | Elegant Spaces Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Holiday Packages</title>
   <link rel="stylesheet" href="/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
- body {
-      margin: 0;
-            font-family: 'Poppins', sans-serif;
-
-      padding: 0;
-  
+    html {
+      scroll-behavior: smooth;
     }
 
-   .blog-container {
-  max-width: 900px;
-   margin: auto;
-  padding: 0.8rem;
-  margin-top: 6rem;
-
-  border-radius: 10px;
-}
-
-
-    .blog-title {
-      font-size: 2rem;
-      font-weight: 600;
-       margin-top: -1rem; /* Increases vertical spacing from top */
-      color: #000000;
-      margin-bottom: 0.5rem;
+    body {
+      font-family: 'Poppins', sans-serif;
+       background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+      color: #333;
+      
     }
 
-    .blog-date {
-      font-size: 0.9rem;
-      color: #272727;
-      margin-bottom: 1.5rem;
+    header {
+      background: linear-gradient(to right, #848285, #2575fc);
+      color: white;
+      text-align: center;
+      padding: 60px 15px 40px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .blog-image {
+    header h1 {
+      font-size: 1.9rem;
+      margin-top: 40px;
+      letter-spacing: 1px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .services-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    @media(min-width: 600px) {
+      .services-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
+      height: 200px;
+      object-fit: cover;
     }
 
-    .blog-content p {
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 1.2rem;
-      text-align: left;
+    .service-card h2 {
+      font-size: 1.3rem;
+      margin: 20px 0;
+      color: #000;
+      font-family: 'Montserrat', sans-serif;
     }
 
-.author-box-slim {
-  display: flex;
-  align-items: center;
-  background: #f4f4f4;
-  padding: 1rem 1.2rem;
-  border-radius: 6px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-  margin-top: 2rem;
+    .btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 12px 22px;
+      background-color: #2575fc;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      transition: background 0.3s ease, padding-right 0.3s ease;
+    }
+
+    .btn::after {
+      content: '→';
+      position: absolute;
+      opacity: 0;
+      right: 20px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #1a5fd5;
+      padding-right: 35px;
+    }
+
+    .btn:hover::after {
+      opacity: 1;
+      right: 15px;
+    }
+.itinerary-section {
+  display: none;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease-in-out;
 }
 
-.author-info strong {
-  color: #222;
-  font-size: 1rem;
+.itinerary-section.active {
   display: block;
-  margin-bottom: 0.3rem;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.author-info p {
-  margin: 0;
+.itinerary-section h3 {
+  font-size: 1.3rem;
+  color: #1e1e1e;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 25px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #ccc;
+}
+
+
+.itinerary-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
   color: #666;
-}
-
-/* Optional: Add media query for extra spacing if needed */
-@media (max-width: 600px) {
-  .author-box-slim {
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem;
-  }
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  margin-bottom: 20px; /* Added gap below */
 }
 
 
-.cta-section-unique {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  max-width: 800px;
-  margin: 4rem auto;
-  animation: fadeInUp 0.7s ease forwards;
-  transform: translateY(20px);
-  opacity: 0;
-}
 
-.cta-section-unique h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #003366;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
 
-.cta-section-unique p {
-  font-size: 1.05rem;
+
+
+
+
+
+.itinerary-day {
+  background-color: #fdfdfd;
+  border-left: 4px solid #007BFF;
+  border-radius: 10px;
+  padding: 15px 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.025);
+  font-size: 1rem;
   color: #333;
   line-height: 1.7;
-  margin-bottom: 2rem;
+  position: relative;
 }
 
-.cta-whatsapp-unique {
-  background: linear-gradient(135deg, #25D366, #128C7E);
-  color: #fff;
-  padding: 0.9rem 1.8rem;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1rem;
-  text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease-in-out;
-  display: inline-block;
-}
-
-.cta-whatsapp-unique:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #1ebe5b, #0b715a);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Entrance animation */
-@keyframes fadeInUp {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Mobile Optimization */
-@media (max-width: 600px) {
-  .cta-section-unique {
-    padding: 2rem 1.2rem;
-  }
-
-  .cta-section-unique h3 {
-    font-size: 1.4rem;
-  }
-
-  .cta-section-unique p {
-    font-size: 1rem;
-  }
-
-  .cta-whatsapp-unique {
-    font-size: 0.95rem;
-    padding: 0.8rem 1.6rem;
-  }
-}
-
-
-
-/* Footer */
-footer {
-  background: #111;
-  color: #666;
+.whatsapp-contact {
+ 
+  padding: 60px 20px;
   text-align: center;
-  font-family: 'Comfortaa', sans-serif;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  letter-spacing: 1.2px;
-  border-top: 1px solid #222;
 }
-/* For small devices */
-@media (max-width: 480px) {
-  footer {
-    font-size: 0.7rem;
-    
-  }
+
+.whatsapp-box {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
+
+.whatsapp-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.whatsapp-box p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+  color: #555;
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+.whatsapp-button img {
+  width: 20px;
+  height: 20px;
+}
+
+
+
 
 
 
@@ -190,126 +241,297 @@ footer {
 </head>
 <body>
 
-<header class="navbar">
-    <div class="logo">
-  <h1>Elegant Spaces</h1>
-</div>
+ <header class="topbar">
+  <div class="logo">
+    <img src="/logo.png" alt="Logo" />
+  </div>
+
+  <ul class="desktop-nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#aboutus">About Us</a></li>
+    <li><a href="/#packages">Packages</a></li>
+    <li><a href="#">Contact</a></li>
+    <li class="social-icons">
+  <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
 
 
-    <nav class="nav-links">
-     <a href="/">Home</a>
-<a href="/#products">Products</a>       <!-- scroll to section in homepage -->
-<a href="/projects/">Projects</a>       <!-- goes to /projects/index.html -->
-<a href="/overview/">Overview</a>       <!-- goes to /overview/index.html -->
+    </li>
+  </ul>
 
-<a href="/#blog">Blog</a>               <!-- scroll to blog section in homepage -->
-<a href="/#contactuss">Contact</a>        <!-- scroll to contact section in homepage -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<nav class="sidemenu" id="sidemenu">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/#aboutus">About Us</a></li>
+    <li><a href="/#packages">Packages</a></li>
+    <li><a href="#">Contact</a></li>
+    <li class="social-icons">
+       <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </li>
+  </ul>
+</nav>
+
+<div class="overlay" id="overlay"></div>
 
 
-    </nav>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+
+
+
+  <!-- Topbar is already in style.css -->
+  <header>
+    <h1>Holiday Packages</h1>
   </header>
 
+  <main class="services-container">
+    <div class="service-card">
+      <img src="/home.jpg" alt="3 Star Deluxe">
+      <h2>3 Star Deluxe</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary1">Discover More</a>
+    </div>
 
+    <div class="service-card">
+      <img src="/h2.jpg" alt="3 Star Deluxe Abu Dhabi">
+      <h2>3 Star Deluxe Abu Dhabi</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary2">Discover More</a>
+    </div>
 
-  <div class="blog-container">
-   <h1 class="blog-title">Top 7 Interior Design Ideas to Transform Your Home.</h1>
-<p class="blog-date">Published on July 5, 2025</p>
+    <div class="service-card">
+      <img src="/h3.jpg" alt="4 Star Premium">
+      <h2>4 Star Premium</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary3">Discover More</a>
+    </div>
 
-<img src="/sofa10.jpg" alt="Interior Trends 2025" class="blog-image" />
+    <div class="service-card">
+      <img src="/h4.jpg" alt="4 Star Premium Abu Dhabi">
+      <h2>4 Star Premium Abu Dhabi</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary4">Discover More</a>
+    </div>
 
-<div class="blog-content">
-  <p>
-   A beautiful home isn’t just about luxury—it’s about comfort, creativity, and character. Whether you’re designing a new home or refreshing an existing space, here are some interior design ideas that can completely transform your living experience.
-  </p>
+    <div class="service-card">
+      <img src="/h5.jpg" alt="4 Star Luxury">
+      <h2>4 Star Luxury</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary5">Discover More</a>
+    </div>
 
-  <h2>1.  Minimalism with Purpose</h2>
-  <p>
-    Less is more. Adopt a minimalist approach with clean lines, neutral tones, and functional furniture. This creates a clutter-free, calming environment.
-  </p>
+    <div class="service-card">
+      <img src="/h6.jpg" alt="4 Star Luxury Abu Dhabi">
+      <h2>4 Star Luxury Abu Dhabi</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary6">Discover More</a>
+    </div>
 
-  <h2>2. Accent Walls That Speak
-</h2>
-  <p>
-   Give your room a personality boost with accent walls—painted bold, clad in wood, or covered with wallpaper. It’s the easiest way to make a dramatic impact.
-  </p>
+    <div class="service-card">
+      <img src="/h7.jpg" alt="5 Star Luxury">
+      <h2>5 Star Luxury</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary7">Discover More</a>
+    </div>
 
-  <h2>3. Open-Concept Living</h2>
-  <p>Break down walls—literally. Merging the kitchen, living, and dining areas creates a spacious feel, ideal for modern family living and entertaining. Interiors are leaning into authenticity. Materials like cane, bamboo, raw wood, clay, and linen are being used for both furniture and decor. These textures bring nature indoors and create a calming ambiance.
-  </p>
+    <div class="service-card">
+      <img src="/h8.jpg" alt="5 Star Luxury Abu Dhabi">
+      <h2>5 Star Luxury Abu Dhabi</h2>
+      <a href="#itineraries" class="btn" data-target="itinerary8">Discover More</a>
+    </div>
+  </main>
 
-  <h2>4. Natural Light & Smart Lighting</h2>
-  <p>
-    Bring in more natural light with large windows or skylights. Complement it with smart lighting solutions—warm ambient lights, pendant fixtures, or dimmable LED strips.
-   </p>
-  <h2>5. Biophilic Design: Bring Nature Inside</h2>
-  <p>
-   Add plants, indoor gardens, wooden textures, and natural fabrics. Biophilic design not only beautifies your home but also enhances well-being.
-  </p>
+  <!-- Itineraries -->
+  <div id="itineraries">
+    <div id="itinerary1" class="itinerary-section">
+      <h3>3 Star Deluxe</h3>
+      <span class="itinerary-label">Itinerary:</span>
+        <div class="itinerary-day">Day 1: Arrival Transfer from Dubai Airport + Check In to Dubai Hotel + Evening Dhow Cruise (Creek) with Dinner.</div>
+  <div class="itinerary-day">Day 2: Half Day Dubai City Tour + Afternoon visit to Burj Khalifa (At the Top – Normal Hours) & Dubai Mall Aquarium and underwater zoo (Tickets & Transfers Included).</div>
+  <div class="itinerary-day">Day 3: Morning visit to Museum of the Future (Entry Ticket & Transfers) + Afternoon Standard Desert Safari with BBQ Dinner.</div>
+  <div class="itinerary-day">Day 4: Dubai Frame Ticket with Transfers + Free time for leisure/shopping or optional activities like view at the palm (General admission ) ticket with transfers /  Dolphin and seal show ticket with transfers.</div>
+  <div class="itinerary-day">Day 5: Check Out + Departure Transfer from Hotel to Dubai Airport.</div>
+    </div>
 
-  <h2>6. Custom Storage Solutions</h2>
-  <p>
-   Hidden cabinets, built-in wardrobes, and under-the-stair drawers help maintain elegance without sacrificing utility.
-  </p>
-
-  <h2>7. Statement Furniture & Art</h2>
-  <p>
-    A single bold sofa, an antique coffee table, or a modern art piece can elevate the space. Use statement items as focal points in each room.
-
-
-  </p>
-
-  <p>
-   Your home should reflect your story—not just trends. Whether it's a cozy reading nook or a luxurious modular kitchen, every corner should inspire.
-  </p>
+    <div id="itinerary2" class="itinerary-section">
+      <h3>3 Star Deluxe Abu Dhabi</h3>
+       <span class="itinerary-label">Itinerary:</span>
+       <div class="itinerary-day">Day 1: Arrival Transfer from Dubai Airport + Check In at 3-Star Hotel (Dubai) + Evening Dhow Cruise – Creek with Dinner</div>
+  <div class="itinerary-day">Day 2: Half Day Dubai City Tour + Afternoon visit to Burj Khalifa (At The Top) & Dubai Aquarium (Tickets & Transfers Included).</div>
+  <div class="itinerary-day">Day 3: Morning visit to Museum of the Future + Afternoon visit to Dubai Frame.</div>
+  <div class="itinerary-day">Day 4: Morning free for shopping. Afternoon Desert Safari with BBQ Dinner (Standard Safari with dune bashing, camel ride & entertainment).</div>
+  <div class="itinerary-day">Day 5: Check out From Dubai Hotel + Inter hotel Transfer to Abu Dhabi with Abu Dhabi City Tour (Sheikh Zayed Grand Mosque & BAPS Temple visit) + Check In at Yas Island Hotel (3-Star).</div>
+  <div class="itinerary-day">Day 6: Check Out + Stay with Yas Island Park Access (Ferrari World / Yas Water world / Warner Bros. World/ Sea world) + Departure Transfer from Abu Dhabi Hotel to DXB/ AUH Airport.</div>
 </div>
 
-<div class="author-box-slim">
-  <div class="author-info">
-    <strong>About Elegant Spaces</strong>
-    <p>Designing modern interiors across South India since 2018. Where creativity meets comfort.</p>
+    <div id="itinerary3" class="itinerary-section">
+      <h3>4 Star Premium</h3>
+       <span class="itinerary-label">Itinerary:</span>
+       <div class="itinerary-day">Day 1: Arrival Transfer from Dubai Airport + Check In at Hotel + Evening Dhow Cruise – Marina with Dinner.</div>
+  <div class="itinerary-day">Day 2:  Arrival Transfer from Dubai Airport + Check In at Hotel + Evening Dhow Cruise – Marina with Dinner.</div>
+  <div class="itinerary-day">Day 3: Morning visit to Museum of the Future (Entry Ticket & Transfers) + Afternoon visit to Dubai Frame.</div>
+  <div class="itinerary-day">Day 4: Morning free for shopping + Afternoon Deluxe/ Premium Desert Safari with BBQ Dinner (Includes dune bashing, camel ride, and entertainment).</div>
+  <div class="itinerary-day">Day 5: Check Out + Departure Transfer from Hotel to Dubai Airport</div>
+    </div>
+
+    <div id="itinerary4" class="itinerary-section">
+      <h3>4 Star Premium Abu Dhabi</h3>
+       <span class="itinerary-label">Itinerary:</span>
+        <div class="itinerary-day">Day 1: : Arrival Transfer + Check In at 4-Star Hotel (Dubai) + Evening Dhow Cruise – Marina with Dinner.</div>
+  <div class="itinerary-day">Day 2: Half Day Dubai City Tour + Afternoon visit to Burj Khalifa (At The Top) & Dubai mall Aquarium and underwater zoo (Tickets & Transfers Included).</div>
+  <div class="itinerary-day">Day 3: Morning visit to Museum of the Future ticket with transfers+ Afternoon visit to Dubai Frame ticket with transfers.</div>
+  <div class="itinerary-day">Day 4: Morning Free for shopping + Afternoon Deluxe/Premium Desert Safari with BBQ Dinner.</div>
+  <div class="itinerary-day">Day 5: Check out from Dubai Hotel + Inter hotel transfers to Abu Dhabi with Abu Dhabi City Tour (Sheikh Zayed Grand Mosque & BAPS Temple visit) + Check In at Yas Island Hotel (4-Star).</div>
+ <div class="itinerary-day">Day 6: Stay with Yas Island Park Access (Ferrari World / Yas Water world / Warner Bros. World/ Sea world) + Check Out + Departure Transfer from Abu Dhabi to DXB / AUH Airport.</div> 
+</div>
+
+    <div id="itinerary5" class="itinerary-section">
+      <h3>4 Star Luxury</h3>
+       <span class="itinerary-label">Itinerary:</span>
+        <div class="itinerary-day">Day 1: Arrival Transfer from Dubai Airport + Check In to Hotel + Evening Private Yacht Ride (3 hours from Dubai Marina with dinner).</div>
+  <div class="itinerary-day">Day 2: Half Day Dubai City Tour + Afternoon visit to Burj Khalifa (At The Top – Normal /Prime Hours) & Dubai Mall Aquarium and underwater zoo (Tickets & Transfers Included).</div>
+  <div class="itinerary-day">Day 3: Morning Museum of the Future visit (Entry Ticket & Transfers) + Afternoon visit to Dubai Frame + Evening Luxury Dinner at Burj Khalifa Roof top dinner / Burj Al Arab / Atlantis the palm (Kaleidoscopic / Saffron restaurants) with transfers(as per choice).</div>
+  <div class="itinerary-day">Day 4:  Morning Helicopter Experience -Iconic Tour - 12 Minutes (Sharing Flight) with transfers + Afternoon Deluxe/Premium Desert Safari with BBQ Dinner (Dune Bashing, Camel Ride, Belly Dance).</div>
+  <div class="itinerary-day">Day 5: Check Out + Departure Transfer from Hotel to Dubai Airport.</div>
+    </div>
+
+    <div id="itinerary6" class="itinerary-section">
+      <h3>4 Star Luxury Abu Dhabi</h3>
+       <span class="itinerary-label">Itinerary:</span>
+        <div class="itinerary-day">Day 1: Arrival Transfer + Check In at 4-Star Hotel + Evening Private Yacht Cruise (Dubai Marina) 3hr with dinner.</div>
+  <div class="itinerary-day">Day 2: Private Dubai City Tour + Afternoon Burj Khalifa (At The Top) & Dubai Aquarium (Tickets & Transfers Included).</div>
+  <div class="itinerary-day">Day 3: Morning Museum of the Future + Afternoon Dubai Frame ticket with transfers + Evening Burj Khalifa Roof top dinner / Burj Al Arab / Atlantis the palm (Kaleidoscopic / Saffron restaurants) with transfers (as per choice).</div>
+  <div class="itinerary-day">Day 4: Morning Helicopter Experience -Iconic Tour - 12 Minutes (Sharing Flight) with transfers + Afternoon Private Desert Safari with BBQ Dinner.</div>
+  <div class="itinerary-day">Day 5: Transfer to Abu Dhabi + Abu Dhabi City Tour (Sheikh Zayed Grand Mosque & BAPS Temple) + Check In at Yas island Hotel (4-Star).</div>
+  <div class="itinerary-day">Day 6: Visit Ferrari World or Warner Bros. World + Check Out + Departure Transfer to DXB/AUH Airport.</div>  
+</div>
+
+    <div id="itinerary7" class="itinerary-section">
+      <h3>5 Star Luxury</h3>
+       <span class="itinerary-label">Itinerary:</span>
+        <div class="itinerary-day">Day 1: Arrival Transfer from Dubai Airport + Check In at 5-Star Hotel + Evening Private Yacht Ride (3 hours from Dubai Marina with dinner).</div>
+  <div class="itinerary-day">Day 2: Half Day Dubai City Tour (Private Vehicle) + Afternoon visit to Burj Khalifa (At The Top – Normal /Prime Hours / VIP ticket) & Dubai Mall Aquarium and Underwater zoo ultimate experiences (Tickets & Transfers Included).</div>
+  <div class="itinerary-day">Day 3: Morning Museum of the Future visit (Entry Ticket (General admission/pioneer pass)  & Transfers) + Afternoon visit to Dubai Frame ticket with transfers  + Evening Burj Khalifa Roof top dinner / Burj Al Arab / Atlantis the palm (Kaleidoscopic / Saffron restaurants) with transfers (as per choice).</div>
+  <div class="itinerary-day">Day 4: Morning Helicopter Experience -Iconic Tour - 12 Minutes (Sharing Flight) with transfers + Afternoon Private Deluxe /Premium Desert Safari with BBQ Dinner (Dune Bashing, Camel Ride, Belly Dance).</div>
+  <div class="itinerary-day">Day 5: Check Out + Departure Transfer from Hotel to Dubai Airport.</div>
+    </div>
+
+    <div id="itinerary8" class="itinerary-section">
+      <h3>5 Star Luxury Abu Dhabi</h3>
+       <span class="itinerary-label">Itinerary:</span>
+        <div class="itinerary-day">Day 1: Arrival Transfer + Check In at 5-Star Hotel + Evening Private Yacht Cruise (Dubai Marina) 3 hrs with dinner.</div>
+  <div class="itinerary-day">Day 2: Private Dubai City Tour + Afternoon Burj Khalifa (At The Top) & Dubai Aquarium (Tickets & Transfers Included).</div>
+  <div class="itinerary-day">Day 3: Morning Museum of the Future + Afternoon Dubai Frame + Evening Dinner at Burj Khalifa / Burj Al Arab / Atlantis (your choice).</div>
+  <div class="itinerary-day">Day 4: Morning Helicopter Tour over Dubai + Afternoon Private Desert Safari with BBQ Dinner.</div>
+  <div class="itinerary-day">Day 5: Private Abu Dhabi City Tour (Sheikh Zayed Grand Mosque & BAPS Temple) + Check In at Abu Dhabi 5-Star Hotel.</div>
+   <div class="itinerary-day">Day 6: Visit Ferrari World or Warner Bros. World + Your Choice of Activity (Shopping, or any excursion like Clymb AUH, Louvre museum, National Aquarium AUH etc.) + Check Out + Departure Transfer from Abu Dhabi Airport.</div>
+</div>
+  
+
+
+<section class="whatsapp-contact" id="whatsapp">
+  <div class="whatsapp-box">
+    <h2>Get in Touch</h2>
+    <p>Have questions or need assistance? Chat with us on WhatsApp.</p>
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-button">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png" alt="WhatsApp Icon" />
+      Chat on WhatsApp
+    </a>
   </div>
-</div>
-
-<div class="cta-section-unique" id="whatsapp">
-  <h3>💡 Need help transforming your space?</h3>
-  <p>
-    At <strong>Elegant Spaces</strong>, we specialize in crafting custom interiors across Kerala that match your taste and lifestyle. From concept to execution—we do it all.
-  </p>
-  <a href="https://wa.me/+917736930939" class="cta-whatsapp-unique" target="_blank">
-    👉 Chat with our expert on WhatsApp
-  </a>
-</div>
-</div>
-
- <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Elegant Spaces. All rights reserved.</p>
-  </footer>
+</section>
 
 
-<!-- JavaScript -->
- <script>
-  function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('show');
-  }
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Logo & About -->
+    <div class="footer-section">
+      <img src="/logo.png" alt="Logo" class="footer-logo">
+      <p>Your Gateway to Unforgottable UAE Experience</p>
+    </div>
 
-  // Close menu when clicking outside
-  document.addEventListener('click', function(event) {
-    const navLinks = document.querySelector('.nav-links');
-    const hamburger = document.querySelector('.hamburger');
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+         <li><a href="/#aboutus">About Us</a></li>
+        <li><a href="/#packages">Packages</a></li>
+        <li><a href="#whatsapp">Contact</a></li>
+      </ul>
+    </div>
 
-    const clickedInsideMenu = navLinks.contains(event.target);
-    const clickedHamburger = hamburger.contains(event.target);
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>📍 Dubai, UAE</p>
+      <p>📞 +971 123 456 789</p>
+      <p>📧 info@yourdomain.com</p>
+      <div class="social-icons">
+        <a href="#"><img src="/Facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="/Instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="/whatsapp.svg" alt="WhatsApp"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 IMDGlobal. All rights reserved.
+  </div>
+</footer>
 
-    // If not clicked on menu or hamburger, close the menu
-    if (!clickedInsideMenu && !clickedHamburger) {
-      navLinks.classList.remove('show');
-    }
+
+
+
+
+
+
+  <script>
+    const buttons = document.querySelectorAll('.btn');
+    const itineraries = document.querySelectorAll('.itinerary-section');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+
+        // Hide all itineraries
+        itineraries.forEach(item => item.classList.remove('active'));
+
+        // Show the selected one
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const sidemenu = document.getElementById("sidemenu");
+  const overlay = document.getElementById("overlay");
+  const menuLinks = sidemenu.querySelectorAll("a"); // Get all links inside sidemenu
+
+  hamburger.addEventListener("click", () => {
+    sidemenu.classList.toggle("active");
+    overlay.classList.toggle("active");
+    hamburger.classList.toggle("open");
+  });
+
+  overlay.addEventListener("click", () => {
+    sidemenu.classList.remove("active");
+    overlay.classList.remove("active");
+    hamburger.classList.remove("open");
+  });
+
+  // ✅ Close sidemenu when any link is clicked
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      sidemenu.classList.remove("active");
+      overlay.classList.remove("active");
+      hamburger.classList.remove("open");
+    });
   });
 </script>
 
 
 
+
 </body>
 </html>
+
