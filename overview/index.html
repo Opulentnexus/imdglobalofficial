@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Furniture Collection</title>
+ <link rel="stylesheet" href="/style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Place in the <head> section -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+        padding-top: 70px; /* adjust based on your header height */
+       background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+    }
+
+       .product-box {
+      max-width: 1100px;
+      margin: 0rem auto;
+      background-color: var(--light);
+      padding: 3.5rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 25px var(--shadow);
+      position: relative;
+    }
+
+
+/* General scroll animation class */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-out;
+}
+
+/* When element is in view */
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+   
+    .product-box h2 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+      position: relative;
+    }
+
+    .product-box h2::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent);
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+    }
+
+    .product-box p {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 2rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .product-grid img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transform: scale(1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .product-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    }
+
+
+    .image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 ratio = 9 / 16 = 0.5625 */
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop & fill without distortion */
+}
+
+
+    .product-details {
+      padding-top: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+       margin-top: 1.5rem;
+    }
+
+    ul li {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+   
+
+    .info-box {
+      background: #fff3f0;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      font-size: 1.05rem;
+    }
+
+    
+    .simple-footer {
+      background: #1b1b1b;
+      color: #ccc;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      margin-top: 4rem;
+    }
+
+   
+     @media (max-width: 480px) {
+  .product-box {
+    padding : 0rem;
+    margin: 0.5rem;
+      margin-bottom: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+
+
+      .product-box h2 {
+        font-size: 2rem;
+      }
+
+      .product-box p,
+      ul li,
+      .info-box {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ <header class="navbar">
+   <div class="logo">
+  <h1>Elegant Spaces</h1>
+</div>
+
+    <nav class="nav-links">
+            <a href="/">Home</a>
+<a href="/#products">Products</a>       <!-- scroll to section in homepage -->
+<a href="/projects/">Projects</a>       <!-- goes to /projects/index.html -->
+
+<a href="/#blog">Blog</a>               <!-- scroll to blog section in homepage -->
+<a href="/#contactuss">Contact</a>        <!-- scroll to contact section in homepage -->
+
+
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <!-- Sofa Section -->
+  <div class="product-box">
+    <h2>Sofa</h2>
+    <p>Explore our range of modern, space-saving sofas perfect for any living area.</p>
+   <div class="image-wrapper">
+  <img src="/sofa10.jpg" alt="Sofa">
+</div>
+
+    <div class="product-details">
+      <ul>
+        <li>L-Type Sofa – Perfect for corners and small spaces</li>
+        <li>C-Type Sofa – Balanced for larger seating needs</li>
+        <li>Modern – Crafted for comfort, styled for today</li>
+        <li>All Model</li>
+      </ul>
+      <div class="info-box">
+        <strong>Materials:</strong> Hardwood, Fabric, Leather <br>
+        <strong>Colors:</strong> Fully customizable
+      </div>
+    </div>
+  </div>
+
+  <!-- Chair Section -->
+  <div class="product-box">
+    <h2>Chairs</h2>
+    <p>Elegant and ergonomic chairs suited for dining, work, and relaxation.</p>
+    <div class="image-wrapper">
+  <img src="/chairs1.jpg" alt="Sofa">
+</div>
+
+    <div class="product-details">
+      <ul>
+        <li>Designer Chair – Make a bold statement with every seat</li>
+        <li>Dining Chair – Comfort that stays through every course</li>
+        <li>Kitchen Chair – Style that fits your cooking space</li>
+        <li>Bar Chair – Perfect perch for your high conversations </li>
+      </ul>
+      <div class="info-box">
+        <strong>Finishes:</strong> Matte, Glossy, Woodgrain <br>
+        <strong>Materials:</strong> Teak, Metal, Upholstery
+      </div>
+    </div>
+  </div>
+
+  <!-- Table Section -->
+  <div class="product-box">
+    <h2>Tables</h2>
+    <p>Functional and fashionable tables for dining, study, or décor.</p>
+    <div class="image-wrapper">
+  <img src="/tables.jpg" alt="Sofa">
+</div>
+
+    <div class="product-details">
+      <ul>
+        <li>Table – Crafted to complete your perfect space</li>
+        <li>Dining Table – Dine in style, every day</li>
+        <li>T Table – Compact. Functional. Beautifully crafted</li>
+        <li>Corner Table – Style your corners smartly</li>
+      </ul>
+      <div class="info-box">
+        <strong>Materials:</strong> Hardwood, Glass, Engineered Wood<br>
+        <strong>Finish Options:</strong> Polish, Laminate, Veneer
+      </div>
+    </div>
+  </div>
+
+  <!-- Curtain Section -->
+  <div class="product-box">
+    <h2>Curtains</h2>
+    <p>Custom-made curtains that complement your room and provide light control.</p>
+    <div class="image-wrapper">
+  <img src="/curtains.jpg" alt="Sofa">
+</div>
+
+    <div class="product-details">
+      <ul>
+        <li>Decor Curtains – Transform your space with designer drapes</li>
+        <li>Lite Curtains – Privacy with a gentle touch of daylight</li>
+        <li>Plain Curtains – Simple. Sophisticated. Always in style</li>
+      </ul>
+      <div class="info-box">
+        <strong>Fabric Options:</strong> Linen, Velvet, Cotton, Silk<br>
+        <strong>Colors:</strong> Custom matching for interiors
+      </div>
+    </div>
+  </div>
+
+  <!-- Blinds Section -->
+  <div class="product-box">
+    <h2>Blinds</h2>
+    <p>Elegant blinds designed for light control, minimalism, and modern homes.</p>
+    <div class="image-wrapper">
+  <img src="/blinds.jpg" alt="Sofa">
+</div>
+
+    <div class="product-details">
+      <ul>
+        <li>Venetian Blinds – Sleek style in every slat</li>
+        <li>Vertical – Perfect for large windows and sliding doors</li>
+        <li>Zebra Blinds – Dual layer control</li>
+        <li>Roman Blinds – Soft folds, refined finish</li>
+             <li>Bamboo Blinds – Natural style with eco-friendly charm</li>
+      </ul>
+      <div class="info-box">
+        <strong>Mechanism:</strong> Manual or Motorized<br>
+        <strong>Finishes:</strong> Blackout, Light Filter, Textured
+      </div>
+    </div>
+     </div>
+
+  <footer class="simple-footer">
+    <p>&copy; 2025 Elegant Spaces. All rights reserved.</p>
+  </footer>
+
+
+  <!-- JavaScript -->
+ <script>
+  function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('show');
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+
+    const clickedInsideMenu = navLinks.contains(event.target);
+    const clickedHamburger = hamburger.contains(event.target);
+
+    // If not clicked on menu or hamburger, close the menu
+    if (!clickedInsideMenu && !clickedHamburger) {
+      navLinks.classList.remove('show');
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    // Automatically target children inside product-box
+    document.querySelectorAll('.product-box *').forEach(el => {
+      el.classList.add('scroll-animate');
+      observer.observe(el);
+    });
+  });
+</script>
+
+
+</body>
+</html>
