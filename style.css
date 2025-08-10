@@ -1,3 +1,10 @@
+:root {
+    color-scheme: light;
+}
+
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +12,13 @@
 }
 
 body {
- font-family: 'Montserrat', sans-serif;
-  background: #f9f9f9;
+    font-family: 'Montserrat', sans-serif;
+    background: #f9f9f9 !important; /* Prevent dark mode auto-change */
+    color: #000000 !important; /* Ensure text stays dark */
+}
+
+img, video, svg, iframe {
+    filter: none !important; /* Prevent media from inverting in dark mode */
 }
 
 html {
@@ -729,4 +741,5 @@ html {
     margin: 0 auto 15px;
   }
 }
+
 
