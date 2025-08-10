@@ -306,6 +306,7 @@ html {
   border: none;
   border-radius: 30px;
   text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
   transition: background-color 0.3s ease;
   text-align: center;
   white-space: nowrap; /* Keeps text in one line */
@@ -317,6 +318,7 @@ html {
     display: block;
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
+    font-family: 'Montserrat', sans-serif;
     margin: 1.5rem auto 0 auto; /* Center horizontally */
     max-width: fit-content;
   }
@@ -727,3 +729,4 @@ html {
     margin: 0 auto 15px;
   }
 }
+
