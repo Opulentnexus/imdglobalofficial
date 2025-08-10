@@ -661,7 +661,19 @@ html {
   }
 }
 
- 
+ /* Initial hidden state */
+.whatsapp-container {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Active state when in view */
+.whatsapp-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .whatsapp-section {
     padding: 100px 20px; /* Top & bottom spacing, side padding */
     margin-bottom: -4rem;
@@ -877,6 +889,7 @@ html {
     margin: 0 auto 15px;
   }
 }
+
 
 
 
