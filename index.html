@@ -206,7 +206,47 @@
 </script>
 
 
+  <section class="whatsapp-section">
+    <div class="whatsapp-container">
+        <h2>Contact Us on WhatsApp</h2>
+        <form id="whatsappForm">
+            <textarea id="message" placeholder="Type your message..." required></textarea>
+            <button type="submit">Send via WhatsApp</button>
+        </form>
+    </div>
+</section>
 
+
+    <script>
+        // Change this to your WhatsApp number in international format (no + or spaces)
+        const phoneNumber = "919812345678";
+
+        document.getElementById("whatsappForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const message = document.getElementById("message").value.trim();
+            if (message) {
+                const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(url, "_blank");
+            }
+        });
+    </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const target = document.querySelector('.whatsapp-container');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                target.classList.add('show');
+                observer.unobserve(target); // stop observing once shown
+            }
+        });
+    }, { threshold: 0.2 });
+
+    observer.observe(target);
+});
+</script>
 
 
 
@@ -324,6 +364,7 @@
 
 </body>
 </html>
+
 
 
 
