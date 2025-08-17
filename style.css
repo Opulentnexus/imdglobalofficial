@@ -426,6 +426,7 @@ html {
   font-size: 1.05rem;
   line-height: 1.6;
   color: #333;
+    text-align: justify;
 }
 
 /* About Section Scroll Animation */
@@ -731,6 +732,7 @@ html {
     margin: 0 auto 15px;
   }
 }
+
 
 
 
