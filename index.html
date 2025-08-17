@@ -132,78 +132,7 @@
   </script>
 
 
-<section class="testimonials-section">
-  <h2 class="section-title">Testimonials</h2>
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <div class="testimonial-card">
-        <p>"From start to finish, our Dubai desert safari was perfectly organized. The guide was knowledgeable, courteous, and ensured every detail was taken care of. The pricing was transparent, and the experience exceeded our expectations."</p>
-        <h4>Ravi Menon</h4>
-        <span>Kerala, India</span>
-      </div>
-      <div class="testimonial-card">
-        <p>"Exceptional service for our corporate trip. The itinerary was efficient, the hotel was centrally located, and airport transfers were punctual. Their attention to detail reflects true professionalism."</p>
-        <h4>Sarah Ahmed</h4>
-        <span>Sharjah, UAE</span>
-      </div>
-      <div class="testimonial-card">
-        <p>"Hotel, transport, and tours were arranged flawlessly. Stress-free travel!"</p>
-        <h4>John Mathew</h4>
-        <span>Bangalore, India</span>
-      </div>
-      <div class="testimonial-card">
-        <p>"Memorable experiences thanks to expert guidance."</p>
-        <h4>Amina Yusuf</h4>
-        <span>Dubai, UAE</span>
-      </div>
-    </div>
 
-    <!-- Move buttons to bottom here -->
-    <div class="carousel-nav">
-      <button class="carousel-btn prev">&#10094;</button>
-      <button class="carousel-btn next">&#10095;</button>
-    </div>
-  </div>
-</section>
-
-
-
-<script>
-  const track = document.querySelector('.carousel-track');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  const nextBtn = document.querySelector('.carousel-btn.next');
-
-  let index = 0;
-  const totalSlides = document.querySelectorAll('.testimonial-card').length;
-
-  nextBtn.addEventListener('click', () => {
-    if (index < totalSlides - 1) index++;
-    else index = 0;
-    updateCarousel();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    if (index > 0) index--;
-    else index = totalSlides - 1;
-    updateCarousel();
-  });
-
-  function updateCarousel() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }
-</script>
-
-<script>
-  window.addEventListener('scroll', function () {
-    const section = document.querySelector('.testimonials-section');
-    const sectionTop = section.getBoundingClientRect().top;
-    const triggerPoint = window.innerHeight * 0.85;
-
-    if (sectionTop < triggerPoint) {
-      section.classList.add('visible');
-    }
-  });
-</script>
 
 
 <section class="whatsapp-contact" id="whatsapp">
@@ -337,6 +266,7 @@
 
 </body>
 </html>
+
 
 
 
