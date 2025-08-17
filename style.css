@@ -406,6 +406,11 @@ html {
   align-items: center;
 }
 
+.about-section {
+  scroll-margin-top: 70px; /* prevents heading from being hidden */
+}
+
+
 .about-text {
   max-width: 800px;
   text-align: center;
@@ -452,9 +457,14 @@ html {
 
 .packages-section {
   padding: 50px 20px;
- 
   text-align: center;
 }
+
+.packages-section {
+  scroll-margin-top: 70px; /* match your fixed header height */
+}
+
+
 
 .section-title {
   font-size: 2rem;
@@ -889,6 +899,7 @@ html {
     margin: 0 auto 15px;
   }
 }
+
 
 
 
