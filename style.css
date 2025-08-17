@@ -555,127 +555,13 @@ html {
 }
 
 
-.testimonials-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-    margin-top: 2.4rem;
-}
-
-.testimonials-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #222;
-  text-align: center;
-}
-
-.carousel-container {
-  position: relative;
-  max-width: 550px;
-  margin: auto;
-  overflow: hidden;
-}
-/* Only affect screens smaller than 600px (typical mobile) */
-@media (max-width: 600px) {
-  .carousel-container {
-    max-width: 90%;  /* or use a fixed smaller size like 320px */
-  }
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-}
-
-.testimonial-card {
-  min-width: 100%;
-  padding: 30px;
-  background: white;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  border-radius: 10px;
-  text-align: left;
-}
-
-.testimonial-card p {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-.testimonial-card h4 {
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-  color: #111;
-}
-
-.testimonial-card span {
-  font-size: 0.9rem;
-  color: #777;
-}
-
-.carousel-btn {
-  background-color: #0072f5;
-  color: #fff;
-  font-size: 16px;
-  border: none;
-  padding: 10px 18px;
-  cursor: pointer;
-  border-radius: 6px;
-  margin: 0 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  font-weight: 500;
-}
-
-.carousel-btn:hover {
-  background-color: #000000;
-  transform: translateY(-2px);
-}
-
-.carousel-btn:active {
-  background-color: #004799;
-  transform: translateY(0);
-}
-
-
-
-.carousel-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-
-.carousel-btn.prev {
-  left: -10px;
-}
-
-.carousel-btn.next {
-  right: -10px;
-}
-
-@media (max-width: 600px) {
-  .testimonial-card {
-    padding: 20px;
-  }
-
-  .carousel-btn {
-    padding: 6px 10px;
-    font-size: 18px;
-  }
-}
 
  
 .whatsapp-contact {
  
   padding: 60px 20px;
   text-align: center;
+ margin-top: -2rem;
 }
 
 .whatsapp-section {
@@ -834,6 +720,7 @@ html {
     margin: 0 auto 15px;
   }
 }
+
 
 
 
