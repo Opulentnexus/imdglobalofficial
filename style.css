@@ -637,9 +637,20 @@ html {
   min-width: 200px;
 }
 
-.footer-logo {
-  width: 150px;
-  margin-bottom: 15px;
+.footer-logo-text {
+  font-size: 1.8rem;   /* adjust size as needed */
+  font-weight: 700;   /* bold */
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-logo-text .imd {
+  color: #ff7528;  /* orange */
+}
+
+.footer-logo-text .global {
+  color: #0867bd;  /* blue */
 }
 
 .footer-section h4 {
@@ -720,6 +731,7 @@ html {
     margin: 0 auto 15px;
   }
 }
+
 
 
 
